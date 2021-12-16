@@ -21,7 +21,6 @@ Vagrant.configure(2) do |config|
           rsync_auto: "true",
           rsync_exclude: [".git/",".vagrant/",".gitignore","Vagrantfile"]
           server.vm.provision "shell", path: "provision/prepare-host.sh"
-          #server.vm.provision "shell", path: "provision/readlog.sh"
     # ssh-pub add in server
           config.vm.provision "shell", inline: <<-SHELL
           cat /vagrant/provision/vagrant-key.pub >> /home/vagrant/.ssh/authorized_keys
